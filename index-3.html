@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let number = 234;
+        console.log(number.toString(2));
+
+        let x = -3.9;
+        console.log(`Floor = ${Math.floor(x)}`);
+        console.log(Math.ceil(x));
+        console.log(Math.round(x));
+        console.log(Math.trunc(x));
+
+        let str = "Bob";
+        str[0] = "D";
+        console.log(str);
+
+        let text = "Hello world! Hello people!";
+        let text_slice = text.slice(6, 11);
+        console.log(text_slice);
+
+        let text_substring = text.substring(11, 6);
+        console.log(text_substring);
+
+        let text_substr = text.substr(6, 5);
+        console.log(text_substr);
+
+        let by = text.replaceAll("Hello", "By");
+        console.log(by);
+
+        console.log(text);
+
+        let data = "C:/Folder/Directory/Path/file.txt";
+        let path = data.split("/");
+        console.log(path);
+
+        let array = []
+        for(i = 0; i < 10; i++)
+        array.push(Math.round(Math.random() * 10));
+        console.log(array);
+
+        //let rem = array.splice(2, 3, 50);
+        // let rem = array.slice(2, 5);
+        // console.log(array);
+        // console.log(rem);
+        
+
+        // ["Бильбо", "Гэндальф", "Назгул"].forEach((item, index, array) => {
+        //     console.log(`У ${item} индекс ${index} в ${array}`);
+        // });
+        
+        //array.forEach((item, index, array) => { array[index] = item * item; });
+        //console.log(array);
+        let num = array.find((item) => item == 5);
+        console.log(num);
+
+        let nums = array.filter((item) => item == 5);
+        console.log(nums);
+    </script>
+</body>
+</html>

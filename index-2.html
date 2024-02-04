@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let array1 = [];
+        let array2 = [22, 11, 55, 33];
+        let array3 = [123, true, "Hello", [45, false], {a: 100, b: "Bob"}];
+
+        let array4 = new Array("One", "Two", 3);
+
+        array1[2] = "100";
+        // for(i = 0; i < array1.length; i++)
+        //     console.log(array1[i]);
+
+        array2 = Array.of("One", "Two", 3);
+        for(i = 0; i < array2.length; i++)
+            console.log(array2[i]);
+
+        let hello = "Hello world";
+        let helloArr = Array.from(hello);
+        console.log(helloArr);
+
+        let numbers = [1, 2, 3, 4, 5, 6];
+        let squares = Array.from(numbers, (n, i) => n * i);
+        console.log(squares);
+        let str = "";
+        // for(let num of numbers)
+        //     str += num + " ";
+        for(let index in numbers)
+            str += numbers[index] + " ";
+        console.log(str);
+
+        let matrix = [[1, 2, 3, 4], [5, 6, 7, 8]];
+        for(i = 0; i < matrix.length; i++)
+        {
+            str = "";
+            for(j = 0; j < matrix[0].length; j++)
+                str += matrix[i][j] + " ";
+            console.log(str);
+        }
+
+        let n = 2
+        let PowerExpr = function()
+        {
+            return n ** 2;
+        };
+
+        n = 5;
+        console.log("Power Expr = ", PowerExpr());
+
+        // let func = function ()
+        //     { return 100; };
+        let func = (n) =>  n * n;
+
+        console.log(func(5));
+
+        function getOper(sign)
+        {
+            switch(sign)
+            {
+                case '+': return (a, b) => a + b;
+                case '*': return function (a, b) { return a * b };
+            }
+        }
+
+        
+
+        // let plus = (a, b) => a + b;
+        // let mult = (a, b) => a * b;
+
+        function calc(a, b, oper)
+        {
+            return oper(a, b);
+        }
+
+        let oper = getOper("*");
+        console.log(oper);
+
+        console.log(calc(10, 20, oper));
+        oper = getOper("+");
+
+        console.log(calc(10, 20, oper));
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>
+
+        </p>
+    </div>
+    <script>
+        let user = {
+            name: "Bobby"
+        };
+        let obj2 = new Object();
+
+        console.log(user);
+        console.log(user.name);
+
+        user["age"] = 25;
+        console.log(user.age);
+
+        user.phone = "+7999 123-45-67";
+        console.log(user);
+
+        user["home address"] = "Moscow";
+        console.log(user);
+
+        for(let prop in user)
+            console.log(`prop = ${prop}, prop value = ${user[prop]}`);
+        
+    </script>
+</body>
+</html>
