@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="prnt">
+        <h2>Block title</h2>
+        
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <p>Hello</p>
+        </ul>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis vero inventore quas voluptatum fugit iure fugiat, hic suscipit aliquam delectus molestias odit accusamus aspernatur maiores natus tenetur exercitationem facere libero.</p>
+        <img src="../../tabs.png" alt="" width="200">
+    </div>
+
+    <script>
+        let ul = document.getElementsByTagName("ul")[0];
+        console.log(ul);
+
+        let index = 1;
+        for(let child of ul.childNodes)
+        {
+            //if(child.nodeType == 1)
+            //    child.innerHTML = "Элемент " + index++;
+            child.innerHTML = "<span style='color: red;'>text</span>";
+            // nodeType:
+            // 1 - element, 2 - attribute, 3 - text
+
+            //if(child.nodeType == 1)
+            //console.log(child + " " 
+                            // + child.nodeType + " "
+                            // + child.nodeName + " "
+                            // + child.nodeValue);
+        }
+            
+
+        // console.log(ul.firstChild);
+        // console.log(ul.firstElementChild);
+
+        // console.log(ul.lastChild);
+        // console.log(ul.lastElementChild);
+
+        // console.log(ul.previousElementSibling);
+        // console.log(ul.nextElementSibling);
+
+        // console.log(ul.parentElement);
+    </script>
+</body>
+</html>

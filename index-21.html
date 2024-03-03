@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div_move{
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>Hello</h1>
+    <button id="btn">Click me</button>
+    <button id="btn-un">Click me 2</button> -->
+
+    <div id="div_move"></div>
+    <input type="button" id="btn_left" value="Left">
+    <input type="button" id="btn_right" value="Right">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            // $("button").bind("click", function(e){
+            //     console.log(e.currentTarget);
+            // });
+
+            // $("body").delegate("button", "click", function(e){
+            //     console.log(e.currentTarget);
+            // });
+
+            // $("body").on("click", "button", function(e){
+            //     console.log(e.currentTarget);
+            // });
+            
+
+            // $("#btn-un").click(function(){
+            //     $("body").append("<button id='btn-new'>Click me 3</button>");
+            // });
+            
+            let x = 0;
+            let y = 0;
+            let div_move = $("#div_move");
+            div_move.css("left", x);
+            
+
+            $("body").keydown(function(e){
+                e.preventDefault();
+
+                let key = e.key;
+                switch(key)
+                {
+                    case "ArrowLeft":
+                        if(x > 10)
+                            x -= 10;
+                        break;
+                    case "ArrowRight":
+                        if(x < 610)
+                            x += 10;
+                        break;
+                };
+                div_move.css("left", x);
+            });
+
+            $("#btn_left").click(function(){
+                $("body").trigger("keydown", {key: "ArrowLeft"});
+            });
+
+            $("#btn_right").click(function(){
+                $("body").trigger("keydown", {key: "ArrowRight"});
+            });
+
+        });
+    </script>
+
+</body>
+</html>

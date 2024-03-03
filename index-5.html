@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let names = ["Bob", "Joe", "Leo", "Tim"];
+        for(let name of names)
+            console.log(name);
+
+        let it = names[Symbol.iterator]();
+        console.log(it);
+
+        let str = "Hello world";
+        it = str[Symbol.iterator]();
+        console.log(it);
+
+        let words = new Map([["table", "стол"], 
+                            ["house", "дом"], 
+                            ["apple", "апельсин"]]);
+        console.log(words);
+        console.log(words.size);
+
+        words.set("apple", "яблоко");
+        words.set("mouse", "мышь");
+        console.log(words);
+
+        console.log(words.get("apple"));
+
+        if(words.has("sun"))
+            console.log(words.get("sun"));
+
+        //words.delete("house");
+        //console.log(words);
+
+        for(let item of words) // words.entries()
+            console.log(item);
+
+        for(let key of words.keys())
+            console.log(key);
+
+        for(let val of words.values())
+            console.log(val);
+
+        words.forEach(function(v, k){
+            console.log(k, ": ", v);
+        });
+
+        let numbers = [1, 2, 3, 4, 2, 5, 3, 7, 5];
+        let set = new Set(numbers);
+        console.log(set);
+
+        set.add(9);
+        console.log(set);
+
+        set.delete(2);
+        console.log(set);
+
+        set.has(5);
+
+        set.forEach((v1, v2, s) => {
+            //console.log(v1, " ", v2);
+            v1 = v1 * v1;
+        });
+        console.log(set);
+
+    </script>
+</body>
+</html>

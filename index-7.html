@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let nameProp = "name";
+
+        let joe = {
+            [nameProp]: "Joe"
+        }
+
+        console.log(joe);
+
+        function User(name, age){
+            this.name = name;
+            this.age = age;
+            this.city = "Tula";
+
+            this.show = function(){
+                console.log(`username: ${this.name}, age: ${this.age}, city: ${this.city}`);
+            }
+        }
+
+        let bob = new User("Bobby", 25);
+        let tom = new User("Tommy", 32);
+
+        console.log(bob instanceof User);
+
+        bob.show();
+
+        let mySqr = new Function("x", "return x * x;");
+        console.log(mySqr);
+        console.log(mySqr(10));
+
+        Function.prototype.program = "Hello";
+        console.log(mySqr.program);
+
+        let Person = class {
+            static #key;
+            name; 
+            age;
+            #state;
+
+            constructor(name = "Anonim", age = 0){
+                this.name = name;
+                this.age = age;
+                this.#state = "member";
+            }
+
+            set State(value) {
+                if(value != "")
+                    this.#state = value;
+                else
+                    this.#state = "member";
+            }
+
+            get State(){
+                return this.#state;
+            }
+
+            showName(pr = "mr."){
+                console.log(pr + this.name + " " + this.#state);
+            }
+        }
+
+        let driver = class Driver{
+
+        }
+
+        let person = new Person();
+        let dr = new driver();
+
+
+        person.name = "Leon";
+        person.State = "admin";
+        person.State = "";
+        person.showName();
+        person.showName("товарищ ");
+        Person.key = 234;
+
+        class Student extends Person{
+            level;
+            constructor(name, age, level = 1){
+                super(name, age);
+                this.level = level;
+            }
+
+            showName(pr = "mr."){
+                super.showName();
+                console.log("Level: " + this.level);
+            }
+        }
+
+        let student = new Student("Voldemar", 21, 3);
+        student.showName();
+
+    </script>
+</body>
+</html>

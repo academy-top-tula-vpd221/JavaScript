@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+        }
+
+        .red{
+            background-color: lightcoral;
+        }
+        .yellow{
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1 style="width: 100px; background-color: lightgray;">Hello</h1>
+    <img src="" alt="Image"> -->
+
+    <div class="red"></div>
+    <input type="text" id="login">
+    <button id="btn">Click me</button>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#btn").click(function(){
+                //$("img").attr("src", "D:/icon1.png");
+                //$("img").removeAttr("alt");
+                //$("img").prop("src", "D:/icon1.png");
+                // $("h1").css({
+                //     "color": function(i, oldValue){
+                //     console.log(oldValue);
+                //     if(oldValue == 'rgb(0, 0, 0)')
+                //         { return "red"; }
+                //     else
+                //         { return "black"; }
+                //     },
+                //     "font-size": "+=1",
+                //     "margin-left": "+=5",
+                // });
+                // $("h1").width($("h1").width() + 10);
+
+                //$("div").addClass("red");
+                //$("div").removeClass("red");
+                //$("div").toggleClass("red");
+
+                //$("div").html("<b>Hello</b> world");
+                let login = $("#login").val();
+                $("div").text(login);
+            });
+        });
+    </script>
+</body>
+</html>

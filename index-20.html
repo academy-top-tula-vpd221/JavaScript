@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div100{
+            width: 100px;
+            height: 100px;
+            border: solid thick black;
+            display: inline-block;
+        }
+        .wrap{
+            background-color: aquamarine;
+        }
+
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap"></div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium rerum soluta nesciunt reiciendis dolorem eum illum eius ex eligendi cum, adipisci ea fuga labore sapiente hic recusandae eaque amet maxime.</p>
+
+    <button id="btn-add">Add</button>
+    <button id="btn-clone">Clone</button>
+    <button id="btn-wrap">Wrap</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#btn-add").click(function(){
+                let div = $("<div></div>");
+                div.addClass("div100");
+                let red = (Math.random() * 10000) % 255;
+                let blue = (Math.random() * 10000) % 255;
+                let green = (Math.random() * 10000) % 255;
+                let bgColor = `rgb(${red},${blue},${green})`;
+                div.css("background-color", bgColor);
+
+                let wrap = $(".wrap");
+                //wrap.append(div);
+                div.appendTo(wrap);
+                //let wrap = $(".wrap").prepend(div);
+            });
+            $("#btn-clone").click(function(){
+                let clone = $(".div100").last().clone();
+                //$(".wrap").prepend(clone);
+                let wrap = $(".wrap");
+                clone.prependTo(wrap);
+
+            });
+
+            $("#btn-wrap").click(function(){
+                $("p").wrap("<div class='red'></div>");
+            });
+
+
+            // add siblings:
+            /*
+            objSelf.before(sibling)
+            objSelf.after(sibling)
+            sibling.insertBefore(self)
+            sibling.insertAfter(self)
+            */
+
+            // replace elements
+            /*
+            self.replaceWith(newElem)
+            newElem.replaceAll(oldElem)
+            */
+
+
+            // delete elements
+            /*
+            self.remove() -- remove all incledes childerns
+            self.detach() -- remove without childerns
+            self.empty()
+            */
+        });
+    </script>
+</body>
+</html>

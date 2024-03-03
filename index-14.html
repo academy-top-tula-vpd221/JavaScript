@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div_move{
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            position: absolute;
+        }
+
+        input[type="button"]{
+            position: relative;
+            top: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div_move"></div>
+    <input type="button" id="btn_left" value="Left">
+    <input type="button" id="btn_right" value="Right">
+    <input type="button" id="btn_up" value="Up">
+    <input type="button" id="btn_down" value="Down">
+
+    <script>
+        let div_move = document.getElementById("div_move");
+        let x = 0;
+        let y = 0;
+        div_move.style.left = x + "px";
+        div_move.style.top = y + "px";
+        
+        document.body.addEventListener("keydown", (e)=>{
+            e.preventDefault();
+
+            let key = e.key;
+            switch(key)
+            {
+                case "ArrowLeft":
+                    if(x > 10)
+                        x -= 10;
+                    break;
+                case "ArrowRight":
+                    if(x < 610)
+                        x += 10;
+                    break;
+                case "ArrowUp":
+                    if(y > 10)
+                        y -= 10;
+                    break;
+                case "ArrowDown":
+                    if(y < 610)
+                        y += 10;
+                    break;               
+            }
+
+            div_move.style.left = x + "px";
+            div_move.style.top = y + "px";
+        });
+
+        document.getElementById("btn_left").addEventListener("click", (e) => {
+            document.body.dispatchEvent(new KeyboardEvent("keydown",{
+                key: "ArrowLeft"
+            }));
+        });
+
+        document.getElementById("btn_right").addEventListener("click", (e) => {
+            document.body.dispatchEvent(new KeyboardEvent("keydown",{
+                key: "ArrowRight"
+            }));
+        });
+
+        document.getElementById("btn_up").addEventListener("click", (e) => {
+            document.body.dispatchEvent(new KeyboardEvent("keydown",{
+                key: "ArrowUp"
+            }));
+        });
+
+        document.getElementById("btn_down").addEventListener("click", (e) => {
+            document.body.dispatchEvent(new KeyboardEvent("keydown",{
+                key: "ArrowDown"
+            }));
+        });
+
+    </script>
+</body>
+</html>

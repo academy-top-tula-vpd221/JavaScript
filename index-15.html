@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="registr" name="registr" action="backcall.php" method="post">
+        <input type="text" name="login">
+        <input type="password" name="password">
+        <!--input type="submit" value="Send"-->
+        <button name="submit">Send</button>
+        <button type="reset">Clear</button>
+    </form>
+
+    <script>
+        //let form_registr = document.registr;
+        let form_registr = document.forms["registr"];
+        //let form_registr = document.forms[0];
+
+        // console.log(form_registr.name); 
+        // console.log(form_registr.length);
+        // console.log(form_registr.elements);
+        // console.log(form_registr.action);
+        // console.log(form_registr.method);
+
+        let login = form_registr.elements["password"];
+        console.log(login.type);
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1"></h1>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2
+            <ul>
+                <li>Item 21</li>
+                <li>Item 22</li>
+            </ul>
+        </li>
+        <li>Item 3</li>
+        <li>Item 4
+            <ul>
+                <li>Item 41</li>
+                <li>Item 42</li>
+            </ul>
+        </li>
+        <li>Item 5</li>
+    </ul>
+
+    <p><a class="my-link" href="#">Link 3</a></p>
+
+    <div id="links">
+        <a class="my-link cr" href="#">Link 1</a>
+        <a class="my-link" href="#">Link 2</a>
+    </div>
+    
+    <a class="my-link cr" href="#">Link 4</a>
+
+    <br>
+    <button id="btn-hello">Hello</button>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // $(function(){});
+
+        $(function(){
+            $("#btn-hello").click(function(){
+                // $("h1").css("visibility", "visible");
+                // $("*").css("color", "red");
+                // $(".c1, #id1, li");
+                // $("li:even").css("color", "red");
+                // $(".my-link", "#links").css("color", "red");
+                // $("li:contains('3'), a:contains('3')").css("color", "red");
+                //let count = $("li:even").length;
+                //$("#h1").text(count);
+                //$("li").eq(-1).css("color", "red");
+                // let lis = $("li");
+                // lis.each(function(i, e){
+                //     e.innerHTML = "Элемент " + (i + 5);
+                // });
+                //$(".my-link").filter(".cr").css("color", "red");
+                //$(".my-link").not(".cr").css("color", "red");
+                
+                // let items = $("li").map(function(i, e){
+                //     if($(e).children().length != 0)
+                //         return e;
+                // });
+                // items.css("color", "red");
+                $("li:contains('3')").css("color", "red");
+            });
+        });
+
+        // jQuery(document).ready(function(){
+
+        // });
+
+        // $(document).ready(function(){
+
+        // });
+
+        $(function(){
+            
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let date1 = new Date(2020, 4, 10);
+        console.log(date1);
+        console.log(date1.getFullYear());
+        console.log(date1.getMonth());
+        console.log(date1.getDay());
+
+        date1.setFullYear(date1.getFullYear() - 5);
+        console.log(date1);
+
+
+        let user = new Object({
+            name: "Bobby",
+            age: 25,
+            address:{
+                city: "Moscow",
+                street: "Mira"
+            }
+        });
+
+        let userJson = JSON.stringify(user, null, 4);
+        console.log(userJson);
+
+
+        let num = 500;
+
+        function F()
+        {
+            console.log(num + 100);
+        }
+
+        num = 200;
+        F();
+
+        function outer(begin, step = 1){
+            let num = begin;
+            let mod = step;
+            function inner(){
+                num += mod
+                console.log(num);
+            }
+            return inner;
+        }
+
+        let func = outer(10, 3);
+
+        for(let i = 0; i < 5; i++)
+            func();
+
+        (() => {
+            document.write("Hello");
+        })();
+
+    </script>
+</body>
+</html>

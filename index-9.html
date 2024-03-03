@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document title</title>
+</head>
+<body>
+    <h2 id="header2">Index page</h2>
+    <h3 class="c1">Index subtitle</h3>
+    <div>
+        <h3>Block header</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores quo unde delectus quam omnis officia! Laboriosam quisquam cumque dolores cum placeat. Repudiandae aliquam reiciendis debitis assumenda, delectus molestiae eveniet corrupti!</p>
+    </div>
+    <img src="../../ada.jpg" width="100">
+    <img src="../../tabs.png" alt="" width="100">
+
+    <script>
+        console.log(document.documentElement);
+        console.log(document.head);
+        console.log(document.body);
+        console.log(document.images);
+
+        //let h3 = document.getElementsByTagName("h3");
+        let div = document.querySelector("div");
+        let c1 = div.getElementsByClassName("c1");
+        console.log(c1);
+
+        let qc1 = document.querySelectorAll(".c1");
+        console.log(qc1);
+
+        let imgs = document.querySelectorAll("[alt]");
+        console.log(imgs);
+
+        console.log(header2);
+    </script>
+</body>
+</html>

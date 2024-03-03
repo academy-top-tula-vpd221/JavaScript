@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .div200{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+
+        .div_red{
+            background-color: red;
+        }
+
+        #tablo{
+            padding: 10px;
+            border: 2px solid black;
+            width: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="div200">
+
+    </div>
+
+    <h1 id="counter"></h1>
+    <input type="button" id="btn" value="Click me">
+    <input type="button" value="Add / Remove" id="btn-ar">
+
+    <div id="tablo"></div>
+
+    <script>
+        /*
+        click,
+        dblclick,
+        contextmenu - right button of mouse
+        mousedown
+        mouseup
+        mousemove
+        mouseover / mouseenter
+        mouseout / mouseleave
+        */
+        let tablo = document.querySelector("#tablo");
+        document.body.addEventListener("mousemove", (e) => {
+            str1 = e.clientX + ":" + e.clientY + "<br>";
+            str2 = e.screenX + ":" + e.screenY + "<br>";
+            str3 = e.movementX + ":" + e.movementY;
+            tablo.innerHTML = str1;
+            tablo.style.left = e.clientX + "px";
+            tablo.style.top = e.clientY + "px";
+        });
+
+
+
+        let div = document.querySelector(".div200");
+        div.onclick = DivClick;
+
+        function DivClick(){
+            div.classList.toggle("div_red");
+        }
+
+        let btn = document.querySelector("#btn");
+        let btn_ar = document.querySelector("#btn-ar");
+        let counter = document.querySelector("#counter");
+        let count = 0;
+
+        // btn.onclick = function(){
+        //     count++;
+        //     counter.innerText = count;
+        // };
+
+        btn.addEventListener("click", () => {
+            count++;
+            counter.innerText = count;
+        });
+        
+        add_handler = false;
+        btn_ar.addEventListener("click", () => {
+            if(!add_handler)
+                btn.addEventListener("click", CountToConsole);
+            else
+                btn.removeEventListener("click", CountToConsole);
+            add_handler = !add_handler;
+        });
+
+        
+
+        function CountToConsole(){
+            console.log(count);
+        }
+
+
+    </script>
+</body>
+</html>

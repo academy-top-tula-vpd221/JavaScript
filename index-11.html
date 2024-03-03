@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .vis{
+            visibility: visible;
+        }
+        .hid{
+            visibility: hidden;
+        }
+
+        .div200{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+
+        .div200-red{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .brd-red{
+            border: 5px red solid;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="header1">Header 1</h1>
+    <h2 id="header2">
+        Header 2
+        <span>Span element</span>
+    </h2>
+
+    <ul id="ul-main">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li id="li3">Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+
+    <div id="div2" class="div200 vis brd-red" lang="ru">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum nemo dolore minus architecto culpa, illum magnam quo impedit suscipit id in deserunt? Dolore exercitationem, molestias aspernatur nam quaerat qui accusantium.
+    </div>
+
+    <top-academy></top-academy>
+
+    <script>
+        // let header2 = document.getElementById("header2");
+        // header2.innerText += "<i>Hello</i>";
+        // //console.log(Object.getPrototypeOf(header2));
+        // console.log(header2.tagName);
+        // console.log(header2.textContent);
+        // console.log(header2.innerText);
+        // console.log(header2.innerHTML);
+        
+        // let p = document.createElement("p");
+        // p.innerText = "Lorem ipsum";
+
+        // let ul1 = document.getElementById("ul-main");
+        // let li3 = document.querySelector("#li3");
+
+        //document.body.append(p);
+        //document.body.prepend(p);
+
+        //li3.append(p);
+        //li3.prepend(p);
+        //li3.after(p);
+        //li3.before(p);
+        //li3.replaceWith(p);
+
+        // let ul_copy = ul1.cloneNode(true);
+        // document.body.append(ul_copy);
+
+        // li3.remove();
+
+        let div2 = document.querySelector("#div2");
+        let div_lang = div2.getAttribute("lang");
+        console.log(div_lang);
+        console.log(div2.lang);
+
+        let div_class = div2.getAttribute("class");
+        console.log(div_class);
+        console.log(div2.className);
+
+        let div_style = div2.getAttribute("style");
+        console.log(div_style);
+        console.log(div2.style);
+
+        //div2.setAttribute("style", "border: 5px blue double;")
+        //div2.removeAttribute("style");
+
+        div2.style.color = "green";
+        div2.style.fontFamily = "Arial";
+
+        div2.classList.toggle("brd-red");
+
+        class TopAcademy extends HTMLElement{
+            constructor(){
+                super();
+
+                this.style.fontSize = "24px";
+
+                let welcome = "";
+
+                let date = new Date().getHours();
+                if(date > 4 && date < 12)
+                    welcome = "Good Morning";
+                else if(date >= 12 && date < 17)
+                    welcome = "Good Day";
+                else if(date >= 17 && date < 24)
+                    welcome = "Good Evning";
+                else
+                    welcome = "Good Night";
+
+                this.innerText = welcome;
+            }
+        }
+        customElements.define("top-academy", TopAcademy)
+
+    </script>
+</body>
+</html>
